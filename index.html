@@ -5,21 +5,46 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to MBC</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <header>
-    <nav class="text-white bg-black">
-      <ul class="flex justify-center space-x-6 p-4 text-2xl">
-        <li><a href="join.html"> | Join our Church | </a></li>
-        <li><a href="events.html"> | Services | </a></li>
-        <li><a href="#"> | Contact Us / Follow us on Media | </a></li>
-      </ul>
-    </nav>
-<div class="bg-blue-700 text-white">
-    <h1 class="flex justify-self-center text-4xl p-8">
-      Welcome to Missionary Baptist Church
-    </h1>
-  </header>
   <body>
+    <header>
+      <nav class="text-white bg-black">
+        <ul class="flex justify-center space-x-6 p-4 text-2xl">
+          <li><a href="join.html">Join our Church</a></li>
+          <li><a href="events.html">Services</a></li>
+          <li><a href="contact.html">Contact Us Follow us on Media</a></li>
+
+          <input class="bg-gray-300" id="userInput" type="text" placeholder="Ask me about MBC"/>
+          <button id="chat"  onclick="my_modal_1.showModal()" class="ml-5 mt-5 text-black bg-gray-300 text-xl">
+            Send
+          </button>
+        </ul>
+      </nav>
+      <div class="bg-blue-700 text-white">
+        <h1 class="flex justify-self-center text-4xl p-8">
+          Welcome to Missionary Baptist Church
+        </h1>
+      </div>
+    </header>
+    <dialog id="my_modal_1" class="modal">
+      <div class="modal-box">
+        <h3 class="text-lg font-bold">Hello!</h3>
+        <div id="chatHistory" class="py-4"></div>
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn bg-black text-white">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
     <section
       class="relative h-[500px] bg-cover bg-center"
       style="
@@ -46,30 +71,9 @@
           >
         </div>
       </div>
-    </div>
     </section>
-  
-
-    
     <main>
-      <div class="bg-blue-700">
-        <h1 class="text-2xl ml-8 mt-8">
-          Hello, I can answer any questions you may have while you're here!
-        </h1>
-        <input
-          class="ml-10 h-10 w-96 text-white text-xl"
-          type="text"
-          id="userInput"
-          placeholder="Chat with Jarvis"
-          aria-label="Type your question here"
-        />
-        <div class="rounded-none">
-          <button id="chat" class="ml-5 mt-5 text-black bg-gray-300 text-xl">
-            Send
-          </button>
-        </div>
-      </div>
-      <div id="chatHistory" class="bg-blue-700 text-white"></div>
+      <div id="chatHistory"></div>
       <p class="flex-row p-6 text-xl text-white bg-blue-700">
         Come and Experience God's Love in Community We believe in the power of
         community and the transformative love of Jesus Christ. As a Missionary
